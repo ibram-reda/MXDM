@@ -1,0 +1,36 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="300"
+             xmlns:material="using:Material.Icons.Avalonia"
+             xmlns:VM="using:MXDM.ViewModels"
+             x:Class="MXDM.Views.CategoriesView"
+             x:DataType="VM:MainWindowViewModel"
+             FontSize="10"
+             Background="#222">
+
+  
+  
+    <StackPanel >
+      <Grid ColumnDefinitions="* auto"   Background="#444">
+        <TextBlock VerticalAlignment="Center" Padding="10 0" FontSize="10">Categories</TextBlock>
+        <Button  Grid.Column="1" Content="{materialIcons:MaterialIconExt Kind=Close}" Background="Transparent"/>
+      </Grid>
+      <Grid>
+        <TreeView Items="{Binding Items}"
+	                Width="400" Height="480"
+	                HorizontalAlignment="Left">
+          <TreeView.ItemTemplate>
+            <TreeDataTemplate ItemsSource="{Binding SubCategory}">
+              <StackPanel Orientation="Horizontal">
+                <material:MaterialIcon Kind="{Binding Icon}" Foreground="{Binding IconColor}"/>
+                <TextBlock Text="{Binding Title}" Margin="10 0"/>
+              </StackPanel>
+            </TreeDataTemplate>
+          </TreeView.ItemTemplate>
+        </TreeView>
+      </Grid>
+    </StackPanel>
+</UserControl>

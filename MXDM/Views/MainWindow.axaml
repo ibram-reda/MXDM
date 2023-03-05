@@ -1,0 +1,60 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:MXDM.ViewModels"
+        xmlns:local="using:MXDM.Views"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="MXDM.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="My Crossplatform Download Manager"
+        
+        TransparencyLevelHint="AcrylicBlur"
+        Background="Transparent"
+        >
+        <!--ExtendClientAreaToDecorationsHint="True"-->
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+  <Panel>
+    <ExperimentalAcrylicBorder IsHitTestVisible="False">
+      <ExperimentalAcrylicBorder.Material>
+        <ExperimentalAcrylicMaterial
+            BackgroundSource="Digger"
+            TintColor="Black"
+            TintOpacity="1"
+            MaterialOpacity="0.65" />
+      </ExperimentalAcrylicBorder.Material>
+    </ExperimentalAcrylicBorder>
+    <DockPanel>
+      <local:MenuBarView DockPanel.Dock="Top"/>
+      <local:ToolBarView DockPanel.Dock="Top"/>
+      <Grid DockPanel.Dock="Left" Margin="10">
+        <Border Width="250" BoxShadow="5 5 10 2 black" Padding="1">
+          <local:CategoriesView />
+        </Border>
+        
+      </Grid>
+      <Border BoxShadow="5 5 10 2 black" Margin="10 10 20 10">
+        <DataGrid Name="MyDataGrid"
+                  Items="{Binding DisplayedObjs}"
+                  AutoGenerateColumns="True"
+                  CanUserResizeColumns="True"
+                  CanUserSortColumns="True"
+                  GridLinesVisibility="All"
+                  BorderBrush="#888"
+                  HorizontalGridLinesBrush="#888"
+                  VerticalGridLinesBrush="#888"
+                  IsReadOnly="True">
+          
+          
+        </DataGrid>
+      </Border>
+    </DockPanel>
+  </Panel>
+</Window>

@@ -1,0 +1,95 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="50"
+             x:Class="MXDM.Views.MenuBarView"
+             Background="#222">
+  <Menu>
+    <MenuItem Header="_Tasks">
+      <MenuItem Header="Add new download"/>
+      <MenuItem Header="Add batch download"/>
+      <MenuItem Header="Add batch download from clipboard"/>
+      <MenuItem Header="Run site grabber"/>
+      <Separator/>
+      <MenuItem Header="Show drop target"/>
+      <Separator/>
+      <MenuItem Header="Export">
+        <MenuItem Header="Export to Text File"/>
+      </MenuItem>
+      <MenuItem Header="Import">
+        <MenuItem Header="Import from Text File"/>
+      </MenuItem>
+      <Separator/>
+      <MenuItem Header="Exit"/>
+    </MenuItem>
+    
+    <MenuItem Header="_File">
+      <MenuItem Header="Stop Download"/>
+      <MenuItem Header="Remove"/>
+      <MenuItem Header="Download Now"/>
+      <MenuItem Header="Redownload"/>
+    </MenuItem>
+    
+    <MenuItem Header="_Downloads">
+      <MenuItem Header="Pause All"/>
+      <MenuItem Header="Stop All"/>
+      <Separator/>
+      <MenuItem Header="Delete All Completed"/>
+      <Separator/>
+      <MenuItem Header="Find (Ctrl-F)"/>
+      <MenuItem Header="Find Next (F3)"/>
+      <Separator/>
+      <MenuItem Header="Scheduler"/>
+      <MenuItem Header="Start Queue">
+        <MenuItem Header="Start Main download queue"/>
+        <MenuItem Header="Start Synchronization download queue"/>
+
+      </MenuItem>
+      <MenuItem Header="Stop Queue">
+        <MenuItem Header="Stop Main download queue"/>
+        <MenuItem Header="Stop Synchronization download queue"/>
+      </MenuItem>
+      <Separator/>
+      <MenuItem Header="Speed Limiter">
+        <MenuItem Header="Turn On"/>
+        <MenuItem Header="Turn Off"/>
+        <Separator/>
+        <MenuItem Header="Settings"/>
+      </MenuItem>
+      <Separator/>
+      <MenuItem Header="Options"/>
+    </MenuItem>
+
+    <MenuItem Header="_View">
+      <MenuItem Header="Hide categories"/>
+      <MenuItem Header="Arrange files"/>
+      <MenuItem Header="Toolbar">
+        <MenuItem Header="customize"/>
+        <Separator/>
+        <MenuItem Header="small icon"/>
+        <MenuItem Header="large icon"/>
+      </MenuItem>
+      <MenuItem Header="Customize URL List"/>
+      <MenuItem Header="Dark Mode support">
+        <MenuItem.Icon>
+          <CheckBox BorderThickness="0"
+                    IsHitTestVisible="False"
+                    IsChecked="True">
+          </CheckBox>
+        </MenuItem.Icon>
+      </MenuItem>
+      <Separator/>
+      <MenuItem Header="Language">
+        <MenuItem Header="English"/>
+        <MenuItem Header="Arabic"/>
+      </MenuItem>
+    </MenuItem>
+
+    <MenuItem Header="_Help">
+      <MenuItem Header="Check For updates"/>
+      <Separator/>
+      <MenuItem Header="About MXDM"/>
+    </MenuItem>
+  </Menu>
+</UserControl>

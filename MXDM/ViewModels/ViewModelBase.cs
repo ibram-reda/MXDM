@@ -1,8 +1,8 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using ReactiveUI;
 
-namespace MXDM.ViewModels
+
+namespace MXDM.ViewModels;
+
+public class ViewModelBase : ReactiveObject
 {
-	public class ViewModelBase : ObservableObject
-	{
-	}
 }
